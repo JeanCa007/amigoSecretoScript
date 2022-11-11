@@ -65,13 +65,16 @@ for i in range(0,len(amigos)):
 
 
 for i in range(0,len(amigos)):
-    intro = 'Querid@ %s :\n' %Juego[i][0]
-    cuerpo = 'Queremos contarte que para el juego del amigo secreto, te ha tocado regalarle a %s \n' %Juego[i][2] 
-    fin =  'Recuerda que debe ser de un valor de máximo de 10000.- y debe ser entregado el día 24 a las 8:00pm\n'
-    despedida = 'Que tengas un lindo dia'
-    msje = intro + cuerpo + fin + despedida
+    intro = 'Querid@ %s :\n' %Juego[i][0] + '\n' 
+    cuerpo = 'Queremos contarte que para el juego del amigo secreto, te ha tocado regalarle a %s' %Juego[i][2] + '\n' + '\n'
+    cuerpo2= 'Fecha:' + '\n' + '07 de Diecimbre - Office Day' +'\n' + '\n'
+    fin =  'Presupuesto: '+ '\n'+'Entre ₡3.000 y ₡10.000'+ '\n' + '\n'
+    despedida = 'Que tengas un lindo dia !!'
+    msje = intro + cuerpo+ cuerpo2+ fin + despedida
+    print(intro+cuerpo)
     sendemail(from_addr, Juego[i][1],subj, msje,login,password)
 
      
 
 
+##print(msje)
