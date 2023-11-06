@@ -5,11 +5,11 @@ import smtplib
 
 #Variables
 
-from_addr    = 'amigosecretofamily2022@gmail.com' #your gmail account. Must have options for 3rd party login 
+from_addr    = 'amigosecretobytesmidas@gmail.com' #your gmail account. Must have options for 3rd party login 
 subj         = 'Amigo Secreto' 
 message      = 'Howdy from a python function' 
-login        = 'amigosecretofamily2022@gmail.com' #your gmail account 
-password     = 'mhbmktxvovxzijog'#your password
+login        = 'amigosecretobytesmidas@gmail.com' #your gmail account 
+password     = 'roteuzggtnjpzlhx'#your password
 
 
 #Send Email Method
@@ -65,13 +65,20 @@ for i in range(0,len(amigos)):
 
 
 for i in range(0,len(amigos)):
+    print('Este %s :\n' %Juego[i][0] + '- %s' %Juego[i][2])
     intro = 'Querid@ %s :\n' %Juego[i][0] + '\n' 
-    cuerpo = 'Queremos contarte que para el juego del amigo secreto, te ha tocado regalarle a %s' %Juego[i][2] + '\n' + '\n'
-    cuerpo2= 'Fecha:' + '\n' + '07 de Diecimbre - Office Day' +'\n' + '\n'
-    fin =  'Presupuesto: '+ '\n'+'Entre ₡3.000 y ₡10.000'+ '\n' + '\n'
-    despedida = 'Que tengas un lindo dia !!'
-    msje = intro + cuerpo+ cuerpo2+ fin + despedida
-    print(intro+cuerpo)
+    cuerpo = 'Este año, tendremos dos intercambios de regalos de amigo secreto y queremos contarte que para el juego del amigo secreto, te ha tocado regalarle a %s' %Juego[i][2] + '\n' + '\n'
+    cuerpo2= 'Fechas:' + '\n' + '-24 de Noviembre - Regalo pequeño - Office Day ' +'\n'
+    cuerpo3= '-15 de Diciembre - Regalo Grande - Office Day ' +'\n' + '\n'
+    fin =  'Presupuesto: '+ '\n'+'-Regalo pequeño ₡5.000'+ '\n'
+    fin2 =  '-Regalo grande ₡20.000'+ '\n' + '\n'
+    tips='Tips para elegir un regalo: '+ '\n'+ '\n' +'-Piensa en los intereses y hobbies de tu amigo secreto'+ '\n' + '\n'
+    tips2='-Si no estás seguro de qué regalar, puedes preguntar a un amigo en común.'+ '\n' + '\n'
+    tips3='-Puedes apoyarte en la lista de opciones de Google Docs compartida en el gurpo de Signal'+ '\n' + '\n'
+    tips4='-No olvides envolver el regalo en papel craft para mantener el anonimato.'+ '\n' + '\n'
+    despedida = 'Esperamos que disfrutes de esta actividad !!'
+    msje = intro + cuerpo+ cuerpo2+cuerpo3+ fin+fin2+tips+tips2+tips3+tips4 + despedida
+    #print(msje)
     sendemail(from_addr, Juego[i][1],subj, msje,login,password)
 
      
